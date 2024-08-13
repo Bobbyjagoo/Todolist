@@ -1,0 +1,197 @@
+  :root{
+    --bgc: white;
+    --txtc: black;
+ } 
+ 
+ *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media screen and (prefers-color-scheme:dark){
+    :root{
+        --bgc: black;
+        --txtc: white;
+     }
+}
+.logo a{
+    text-decoration: none;
+    color: var(--txt);
+}
+body{
+   height:100vh ;
+   background-color: white;
+   color: black;
+   --card-bg: rgb(224, 224, 224);
+   --add: orange;
+   --txt: black;
+}
+
+body.dark-mode{
+    background-color: black;
+    color: white;
+    --card-bg: rgb(30, 30, 30);
+    --add: blue;
+    --txt: white;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    height: 70px;
+    box-shadow: 0 15px 20px rgba(30,30,30,0.2);
+    align-items: center;
+    background-color: var(--text-color);
+    color: var(--txt);
+
+}
+
+
+.main-section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.task-app
+{
+    width: 700px;
+    box-shadow: 0 10px 15px rgba(30, 30, 30, 0.4) ;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: var(--card-bg);
+    color: var(--txt);
+}
+
+.input-container{
+    display: flex;
+    gap: 20px;
+
+}
+.input-container input{
+    width: 80%;
+    border-radius: 15px;
+    padding: 15px;
+    border: 1px solid grey;
+
+}
+
+.btn{
+    width: calc(100% - 80%);
+    padding: 13px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--add);
+    color: white;
+}
+
+.task-app ul{
+    
+padding: 20px;
+}
+li{
+    list-style: circle;
+    list-style-position: inside;
+    position: relative;
+    padding: 15px;
+    
+}
+li.checked {
+ /* background: orange; */
+ list-style: disc;
+ list-style-position:inside;
+
+}
+li::marker{
+    font-size: x-large;
+}
+li.checked::marker{
+    color: orange;
+}
+li div{
+    width: 20px;
+    height: 20px;
+    border: 1px solid grey;
+    border-radius: 15%;
+    position: absolute;
+    left: 0;
+    top: 17px;
+    z-index: 5;
+    cursor: pointer;
+    background-color: red;
+}
+
+
+
+span{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    display: grid;
+    place-items: center;
+    top: 15px;
+}
+
+span:hover{
+    background-color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:540px) {
+    .nav-link{
+        display: none;
+        transition: ease-in-out 1s;
+    }
+
+    .nav-link:target{
+        position: absolute;
+        display: block;
+        top: 70px;
+        background: white;
+        width: 100%;
+        left: 0;
+        /* z-index: ; */
+        padding: 10px 0 0 0;
+    }
+
+    .nav-link li a{
+      padding: 10px 16px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .nav-link li a:hover{
+        color: black;
+    }
+
+    li{
+        height: 30px;
+    }
+
+
+}
+
+@media screen and (min-width:541px) {
+    .nav-btn{
+        display: none;
+        transition: ease-in-out 1s;
+    }
+}
